@@ -1,0 +1,80 @@
+import java.util.Date;
+import java.util.Scanner;
+
+public class ObjectsInJava {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+    }
+}
+
+class Autos {
+
+    public int maxSpeed;
+    public String color;
+    public Date productionDate;
+
+    public Autos(){
+    }
+
+    public Autos (int maxSpeed, String color, Date productionDate) { //Autos may be private
+        this.maxSpeed = maxSpeed;
+        this.color = color;
+        this.productionDate = productionDate;
+    }
+
+    public int getMaxSpeed() {
+        return this.maxSpeed;
+    }
+
+    public void setMaxSpeed(int newMaxSpeed) {
+        this.maxSpeed = newMaxSpeed;
+    }
+
+    public String getColor() {
+        return this.color;
+    }
+
+    public void setColor(String newColor) {
+        this.color = newColor;
+    }
+
+    public Date getProductionDate() {
+        return this.productionDate;
+    }
+
+    public void setProductionDate(Date newProductionDate) {
+        this.productionDate = newProductionDate;
+    }
+}
+
+class VM extends Autos {
+}
+
+class Mercedess extends Autos {
+}
+
+class Opel  extends Autos {
+    public double weight;
+    public int seats;
+
+    public void Opel (double weight, int seats){
+    this.weight = weight;
+    this.seats = seats;
+    }
+
+    public double getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(double newWeight) {
+        this.weight = newWeight;
+    }
+    public int getSeats() {
+        return this.seats;
+    }
+
+    public void setSeats(int newSeats) {
+        this.seats = newSeats;
+    }
+}
