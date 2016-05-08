@@ -1,0 +1,153 @@
+import java.util.Date;
+import java.util.Scanner;
+
+public class ObjectsInJava {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+    }
+}
+
+class Product implements CanBeEaten, CanBeDrank {
+
+    //Fields
+    private String name;
+    private Date exparationDate;
+    private String consumptionProcess;
+
+    //Constructor
+
+    public Product (String Name, Date ExparationDate, Boolean ConsumedByEating, Boolean ConsumedByDrinking ) {
+        if (ConsumedByEating) {
+            this.consumptionProcess = consumedByEating;
+        } else if (ConsumedByDrinking) {
+            this.consumptionProcess = consumedByDrinking;
+        } else {
+            this.consumptionProcess = "The product can be cosumed by eating or drinking.";
+        }
+    }
+
+    public Product (String Name, Date ExparationDate) {
+        this.consumptionProcess = "The product can't be cosumed by eating or drinking.The product is poisonus.";        
+    }
+
+    //Properties
+
+    public void setName(String Name) {
+        this.name = Name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setExparationDate(Date ExparationDate) {
+        this.exparationDate = ExparationDate;
+    }
+
+    public Date getExparationDate() {
+        return exparationDate;
+    }
+
+    public String getConsumptionProcess() {
+        return consumptionProcess;
+    }
+}
+
+class Person {
+
+    public String name;
+    public int age;
+
+	public Person(){} 
+    
+    public Person (String Name, int Age) {
+        this.name = Name;
+        this.age = Age;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public int getAge(){
+        return this.age;
+    }
+}
+ 
+class Staff extends Person implements HasSalary, HasBonus {
+
+    public String bonus;
+    public int newSalary;
+
+    public Staff (String Name, int Age, int Salary, Boolean Bonus) {
+        this.name = Name;
+        this.age = Age;
+        this.newSalary = Salary;
+
+        if (Bonus) {
+            this.bonus = "The staff has a bonus to his salary."; 
+            this.newSalary += ((this.newSalary*bonusPercentage)/100);
+        }
+    }
+
+    public void setAnotherSalary(int Salary) {
+        this.newSalary = Salary;
+    }
+
+    public int getSalary() {
+        return this.salary;
+    }
+
+    //the bonusPercentage can't be changed so we skip the setter
+
+    public int getBonusPercentage() {
+        return this.bonusPercentage;
+    }
+}
+
+class Client extends Person implements HasDiscount {
+
+    private double money;
+
+    public Client (String Name, int Age, double Money) {
+        this.name = Name;
+        this.age = Age;
+        this.money = Money;
+    }
+
+    public void setAmountOfMoney(int Money) {
+        this.money = Money;
+    }
+
+    public double getMoney() {
+        return this.money;
+    }
+
+    public int getDiscopuntPercentage() {
+        return this.discountPercentage;
+    }
+}
+
+//Interfaces
+
+interface CanBeEaten{
+    public String consumedByEating = "The product can be cosumed by eating.";
+}
+
+interface CanBeDrank{
+    public String consumedByDrinking = "The product can be cosumed by drinking.";
+}
+
+interface HasSalary{
+    public int salary = 300;
+}
+
+interface HasDiscount{
+    public final int discountPercentage = 10;
+}
+
+interface HasBonus{
+    public final int bonusPercentage = 5;
+}
+
