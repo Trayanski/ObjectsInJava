@@ -1,0 +1,48 @@
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class ObjectsInJava {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+    }
+}
+
+class Sumator {
+
+    public Sumator() {
+        
+    }
+    
+    public static int Sumator(Integer num1, Integer num2) {
+        int sum = 0;
+        return sum = num1 + num2;
+    }
+
+    public static double Sumator(Double num1, Double num2) {
+        double sum = 0;
+        return sum = num1 + num2;
+    }
+
+    public static int Sumator(String num1, String num2) {
+        int sum = 0;
+        int firstInt = Integer.parseInt(num1);
+        int secondInt = Integer.parseInt(num2);
+        return sum = firstInt + secondInt;
+    }
+
+    public static BigInteger Sumator (long num1, long num2) {
+        BigInteger sum = BigInteger.valueOf(0);
+        sum.add(BigInteger.valueOf(num1));
+        sum.add(BigInteger.valueOf(num2));
+        return sum;
+    }
+
+    public static BigDecimal Sumator (double num1, double num2) {
+        BigDecimal sum = new BigDecimal(0);
+        sum = sum.add(new BigDecimal(num1));
+        sum = sum.add(new BigDecimal(num2));
+        return sum;
+    }
+}
